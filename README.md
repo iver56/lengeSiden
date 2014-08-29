@@ -1,0 +1,1 @@
+Copy lengeSiden/www/js/config.js.example to lengeSiden/www/js/config.js and set your firebase ref there

@@ -1,0 +1,1 @@
+var fbRef = new Firebase("https://<your-firebase>.firebaseio.com/");
