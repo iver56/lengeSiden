@@ -9,10 +9,6 @@
   <link href="lib/ionic/css/ionic.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-  <link href="css/ionic.app.css" rel="stylesheet">
-  -->
-
   <!-- ionic/angularjs js -->
   <script src="lib/ionic/js/ionic.bundle.js"></script>
 
@@ -31,28 +27,15 @@
   <ion-header-bar class="bar-stable">
     <h1 class="title">Lenge siden</h1>
     <div class="buttons">
-      <button class="button-icon icon button ion-plus" ng-click="showModal()"></button>
+      <button class="button-icon icon button ion-plus" ng-click="openModal()"></button>
     </div>
   </ion-header-bar>
   <ion-content>
-
-    <ul>
-      <li ng-repeat="message in messages">
-        <!-- exit a message -->
-        <input ng-model="message.text" ng-change="messages.$save(message)"/>
-
-        <!-- delete message -->
-        <button ng-click="messages.$remove(message)">X</button>
-
-      </li>
-    </ul>
-
-    <!-- push a new message into the array -->
-    <form ng-submit="addItem()">
-      <input ng-model="newMessage.text"/>
-      <button type="submit">add message</button>
-    </form>
-
+    <ion-list>
+      <ion-item ng-repeat="item in items">
+        {{ item.name }}
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-pane>
 </body>

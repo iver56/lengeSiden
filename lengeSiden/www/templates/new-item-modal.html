@@ -1,0 +1,22 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Legg til ny oppgave</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Oppgavenavn</span>
+        <input type="text" placeholder="..." ng-model="newItem.name">
+      </label>
+      <label class="item">
+        <div class="input-label">Hvor ofte bør oppgaven utføres?</div>
+        <select ng-model="newItem.interval"
+                ng-options="interval.days as interval.name for interval in intervals">
+        </select>
+      </label>
+      <button class="button button-full button-positive" ng-click="saveNewItem()">
+        Lagre
+      </button>
+    </div>
+  </ion-content>
+</ion-modal-view>
