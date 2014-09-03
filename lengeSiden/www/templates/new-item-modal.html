@@ -3,10 +3,11 @@
     <h1 class="title">Legg til ny oppgave</h1>
   </ion-header-bar>
   <ion-content>
-    <div class="list">
+    <form class="list" name="newItemForm" novalidate>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Oppgavenavn</span>
-        <input type="text" placeholder="..." ng-model="newItem.name">
+        <input type="text" placeholder="..." ng-model="newItem.name" required ng-minlength="2"
+               ng-maxlength="100" name="name">
       </label>
       <label class="item">
         <div class="input-label">Hvor ofte bør oppgaven utføres?</div>
@@ -14,9 +15,9 @@
                 ng-options="interval.days as interval.name for interval in intervals">
         </select>
       </label>
-      <button class="button button-full button-positive" ng-click="saveNewItem()">
+      <button type="submit" class="button button-full button-positive" ng-click="saveNewItem()">
         Lagre
       </button>
-    </div>
+    </form>
   </ion-content>
 </ion-modal-view>

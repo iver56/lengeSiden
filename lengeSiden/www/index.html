@@ -25,15 +25,22 @@
 
 <ion-pane ng-controller="ListCtrl">
   <ion-header-bar class="bar-stable">
+    <div class="buttons">
+      <button class="button button-icon icon ion-ios7-minus-outline"
+              ng-click="toggleShowDelete()"></button>
+    </div>
     <h1 class="title">Lenge siden</h1>
+
     <div class="buttons">
       <button class="button-icon icon button ion-plus" ng-click="openModal()"></button>
     </div>
   </ion-header-bar>
   <ion-content>
-    <ion-list>
+    <ion-list show-delete="showDelete">
       <ion-item ng-repeat="item in items">
         {{ item.name }}
+        <ion-delete-button class="ion-minus-circled"
+                           ng-click="items.$remove(item)">
       </ion-item>
     </ion-list>
   </ion-content>

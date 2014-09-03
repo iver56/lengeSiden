@@ -11,6 +11,11 @@ lengeSidenApp.controller("ListCtrl", function($scope, $firebase, $ionicModal) {
     interval: 7 //number of days
   };
 
+  $scope.showDelete = false;
+  $scope.toggleShowDelete = function() {
+    $scope.showDelete = !$scope.showDelete;
+  };
+
   var ref = new Firebase(firebaseUrl);
   var sync = $firebase(ref);
   $scope.items = sync.$asArray();
