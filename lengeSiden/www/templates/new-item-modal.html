@@ -15,6 +15,12 @@
                 ng-options="interval.days as interval.name for interval in intervals">
         </select>
       </label>
+      <label class="item">
+        <div class="input-label">Når er neste gang oppgaven bør utføres?</div>
+        <select ng-model="newItem.nextTime"
+                ng-options="date.key as date.text for date in dates">
+        </select>
+      </label>
       <button type="submit" class="button button-full button-positive" ng-click="saveNewItem()">
         Lagre
       </button>

@@ -1,4 +1,4 @@
-lengeSidenApp.controller("ListCtrl", function($scope, $firebase, $ionicModal) {
+lengeSidenApp.controller("ListCtrl", function($scope, $firebase, $ionicModal, DateTimeService) {
   $ionicModal.fromTemplateUrl('templates/new-item-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
@@ -8,7 +8,8 @@ lengeSidenApp.controller("ListCtrl", function($scope, $firebase, $ionicModal) {
 
   $scope.newItem = {
     name: "",
-    interval: 7 //number of days
+    interval: 7, //number of days
+    nextTime: DateTimeService.getDefaultDate()
   };
 
   $scope.showDelete = false;
@@ -40,5 +41,7 @@ lengeSidenApp.controller("ListCtrl", function($scope, $firebase, $ionicModal) {
     {days:91, name: "Hvert kvartal"},
     {days:182, name: "Hvert halvår"},
     {days:365, name: "Hvert år"}
-  ]
+  ];
+
+  $scope.dates = DateTimeService.getDates(180);
 });
